@@ -5,10 +5,10 @@ const fs = require('fs');
 const uploadFileToSftpServer = async (content, remoteFolder) => {
       try {
           const connSettings = {
-            host: 'hostname',
-            port: 22,
+            host: 'hostname', // EC2 public IP address
+            port: 22, 
             username: 'ubuntu',
-            privateKey: fs.readFileSync('./path/to/your/key.pem'),
+            privateKey: fs.readFileSync('./path/to/your/key.pem'), // EC2 keypair
           };
           const Client = require('ssh2-sftp-client');
           const { Parser } = require('json2csv');
