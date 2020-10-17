@@ -1,0 +1,24 @@
+service: scheduling-ssh-job-using-aws-lambda
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: dev
+  region: us-east-1
+  iamRoleStatements:
+  - Effect: Allow
+    Action:
+      - ec2:CreateNetworkInterface
+      - ec2:DescribeNetworkInterfaces
+      - ec2:DeleteNetworkInterface
+    Resource: '*'
+
+functions:
+  sshScheduler:
+    handler: handler.sshScheduler
+    events:
+      - schedule:
+          rate: cron(0/5 * ? * * *)
+          enabled: true
