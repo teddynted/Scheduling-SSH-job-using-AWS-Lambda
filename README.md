@@ -1,4 +1,4 @@
-How to schedule an ssh cron job on AWS Lambda(Node.js) function to upload a csv file to an EC2 instance? The job will run between Monday and Friday at 3am. 
+How to schedule an ssh cron job on AWS Lambda(Node.js) function to upload a csv file to an EC2 instance? A job that will run every week between Monday and Friday at 3am. 
 
 _Cron Jobs are used for scheduling tasks to run on the server. They're most commonly used for automating system maintenance or administration._
 
